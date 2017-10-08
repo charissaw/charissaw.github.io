@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Experience: Banana Republic</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="stylesheet-main.css">
+	<style type="text/css">
+		.main {
+			position: absolute;
+			margin-left: 40px;
+			margin-top: 50px;
+			text-align: left;
+			display: block;
+		}
+		.main h2 {
+			font-size: 2em;
+			color: #BC4C48;
+		}
+		.main p {
+			color: #697B78;
+		}
+		#banner {
+			position: absolute;
+			margin-left: 500px;
+			margin-top: -63px;
+		}
+		#cycler {
+			position:relative;
+			display: block;
+		}
+		#cycler img {
+			position:absolute;z-index:1
+		}
+		#cycler img.active {
+			z-index:3
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<table>
+			<tr>
+				<td width=80%>&nbsp;</td>
+				<td><a href="home.html">Home</a></td>
+				<td><a href="experience.html">Experience</a></td>
+				<td><a href="contact.html">Contact</a></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="main">
+		<h2>Banana Republic</h2>
+		<div id="cycler">
+			<p>Homepage with images cycling every 7 seconds:</p>
+			<img class="active" src="Nov12Homepage1.png" height="800px;" />
+			<img src="Nov12Homepage2.png" height="800px;" />		
+		</div>
+		<div id="banner">
+			<p>Clickable banner:</p>
+			<img src="HarrisTweedfull.png" / height="800px;">
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+	<script>
+		function cycleImages(){
+		      var $active = $('#cycler .active');
+		      var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+		      $next.css('z-index',2);//move the next image up the pile
+		      $active.fadeOut(1000,function(){//fade out the top image
+			  $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+		          $next.css('z-index',3).addClass('active');//make the next image the top one
+		      });
+		    }
+
+		$(document).ready(function(){
+		// run every 4s
+		setInterval('cycleImages()', 7000);
+		})
+	</script>
+</body>
+</html>

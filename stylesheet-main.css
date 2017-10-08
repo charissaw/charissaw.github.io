@@ -1,0 +1,25 @@
+html {
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	background-color: #F7F7F7;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+.header {
+	font-size: 0.75em;
+}	
+.header table {
+	float: right;
+	width: 100%;
+	border-top: 1px solid #697B78;
+	border-bottom: 1px solid #697B78;
+}
+.header table td {
+	padding-left: 100px;
+	color: #BC4C48;
+}
+.header table td a:hover {
+	color: #697B78;
+}
